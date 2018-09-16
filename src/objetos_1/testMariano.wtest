@@ -1,0 +1,24 @@
+import mariano.*
+import golosinas.*
+
+describe "tests Mariano" {
+
+	var golosinasDeseadas = #{ alfajor, bombon, chocolatin, chupetin }
+	var gustosDeseados = #{ "melon", "chocolate", "frutilla", "vainilla" }
+
+	fixture {
+		mariano.comprar(chocolatin)
+		mariano.comprar(bombon)
+		mariano.comprar(tuttifrutti)
+		mariano.comprar(oblea)
+	}
+
+	test "golosinas faltantes" {
+		assert.equals(#{ alfajor, chupetin }, mariano.golosinasFaltantes(golosinasDeseadas))
+	}
+
+	test "gustos faltantes" {
+		assert.equals(#{ 'melon' }, mariano.gustosFaltantes(gustosDeseados))
+	}
+
+}
