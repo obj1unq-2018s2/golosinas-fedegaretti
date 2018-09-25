@@ -1,10 +1,11 @@
+import golosinas.*
 object mariano {
 
 	var property golosinas = []
 
-	method comprar(golosina) = golosinas.add(golosina)
+	method comprar(golosina) { golosinas.add(golosina) }
 
-	method desechar(golosina) = golosinas.remove(golosina)
+	method desechar(golosina) { golosinas.remove(golosina) }
 
 	method probarGolosinas() = golosinas.forEach{ golosina => golosina.mordisco() }
 
@@ -22,9 +23,15 @@ object mariano {
 
 	method pesoGolosinas() = golosinas.sum{ golosina => golosina.peso() }
 
-	method golosinasFaltantes(golosinasDeseadas) = golosinasDeseadas.difference(golosinas.asSet())
+	method golosinasFaltantes(golosinasDeseadas) = golosinasDeseadas.difference(golosinas)
 
-	method gustosFaltantes(gustosDeseados) = gustosDeseados.difference(self.sabores().asSet())
-
+	method gustosFaltantes(gustosDeseados) = gustosDeseados.difference(self.sabores())
+	
+	method baniar(golosina) { 
+		if(golosinas.contains(golosina)){
+			golosinas.remove(golosina)
+		}
+		self.comprar(new GolosinaBaniada(golosinaInterior = golosina))
+	}
 }
 

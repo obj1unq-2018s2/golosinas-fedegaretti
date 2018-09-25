@@ -3,6 +3,12 @@ import golosinas.*
 
 describe "tests Mariano" {
 
+	var chocolatin = new Chocolatin(pesoInicial = 100, peso = 100)
+	var oblea = new Oblea()
+	var bombon = new Bombon()
+	var alfajor = new Alfajor()
+	var chupetin = new Chupetin()
+	var tuttifrutti = new Tuttifrutti()
 	var golosinasDeseadas = #{ alfajor, bombon, chocolatin, chupetin }
 	var gustosDeseados = #{ "melon", "chocolate", "frutilla", "vainilla" }
 
@@ -22,3 +28,4 @@ describe "tests Mariano" {
 	}
 
 }
+
