@@ -1,3 +1,5 @@
+// Corregido
+
 object bombon {
 
 	var property peso = 15
